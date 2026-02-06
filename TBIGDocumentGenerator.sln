@@ -1,0 +1,49 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.14.36511.14
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TBIGDocumentGenerator.Api", "src\TBIGDocumentGenerator.Api\TBIGDocumentGenerator.Api.csproj", "{3E86F33F-C84C-4791-AFAF-3613E93F610C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TBIGDocumentGenerator.Domain", "src\TBIGDocumentGenerator.Domain\TBIGDocumentGenerator.Domain.csproj", "{55FD2B77-0DFD-406F-8B60-4A82D6458496}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TBIGDocumentGenerator.Application", "src\TBIGDocumentGenerator.Application\TBIGDocumentGenerator.Application.csproj", "{2773B5D9-4F8A-4C71-AD57-97534F125DCE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TBIGDocumentGenerator.Infrastructure", "src\TBIGDocumentGenerator.Infrastructure\TBIGDocumentGenerator.Infrastructure.csproj", "{FA9B6458-6C9D-4E26-8272-E5EDAABB6484}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TBIGDocumentGenerator.Worker", "src\TBIGDocumentGenerator.Worker\TBIGDocumentGenerator.Worker.csproj", "{F2E3F610-0379-44B6-8CE8-6C300004AD3F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{3E86F33F-C84C-4791-AFAF-3613E93F610C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3E86F33F-C84C-4791-AFAF-3613E93F610C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3E86F33F-C84C-4791-AFAF-3613E93F610C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3E86F33F-C84C-4791-AFAF-3613E93F610C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{55FD2B77-0DFD-406F-8B60-4A82D6458496}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{55FD2B77-0DFD-406F-8B60-4A82D6458496}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{55FD2B77-0DFD-406F-8B60-4A82D6458496}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{55FD2B77-0DFD-406F-8B60-4A82D6458496}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2773B5D9-4F8A-4C71-AD57-97534F125DCE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2773B5D9-4F8A-4C71-AD57-97534F125DCE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2773B5D9-4F8A-4C71-AD57-97534F125DCE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2773B5D9-4F8A-4C71-AD57-97534F125DCE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FA9B6458-6C9D-4E26-8272-E5EDAABB6484}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FA9B6458-6C9D-4E26-8272-E5EDAABB6484}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FA9B6458-6C9D-4E26-8272-E5EDAABB6484}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FA9B6458-6C9D-4E26-8272-E5EDAABB6484}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F2E3F610-0379-44B6-8CE8-6C300004AD3F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F2E3F610-0379-44B6-8CE8-6C300004AD3F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F2E3F610-0379-44B6-8CE8-6C300004AD3F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F2E3F610-0379-44B6-8CE8-6C300004AD3F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {E97A1698-7A2C-411A-BE21-2925CC22CE25}
+	EndGlobalSection
+EndGlobal

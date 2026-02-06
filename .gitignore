@@ -1,0 +1,63 @@
+## Build results
+bin/
+obj/
+out/
+
+## User-specific files
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+## Visual Studio cache
+.vs/
+
+## ASP.NET Scaffolding
+ScaffoldingReadMe.txt
+
+## Logs
+*.log
+
+## NuGet
+*.nupkg
+packages/
+*.snupkg
+project.lock.json
+project.fragment.lock.json
+artifacts/
+
+## Rider / JetBrains
+.idea/
+
+## Transient files
+*.tmp
+*.bak
+*.swp
+*.scc
+
+## DotCover
+*.dotCover
+
+## Resharper
+_ReSharper*/
+*.[Rr]e[Ss]harper
+*.DotSettings.user
+
+## VS Code
+.vscode/
+
+## Publish
+wwwroot/dist/
+wwwroot/node_modules/
+
+## Secrets
+secrets.json
+
+## Others
+node_modules/
+npm-debug.log
+yarn-error.log
+.env
+
+## Storage
+src/**/Storage/

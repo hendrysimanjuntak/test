@@ -1,0 +1,18 @@
+<Project Sdk="Microsoft.NET.Sdk.Worker">
+
+  <PropertyGroup>
+    <TargetFramework>net9.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <UserSecretsId>dotnet-TBIGDocumentGenerator.Worker-9c787c28-f531-4b83-9fd6-29aabe873b01</UserSecretsId>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Extensions.Hosting" Version="9.0.12" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\TBIGDocumentGenerator.Application\TBIGDocumentGenerator.Application.csproj" />
+    <ProjectReference Include="..\TBIGDocumentGenerator.Infrastructure\TBIGDocumentGenerator.Infrastructure.csproj" />
+  </ItemGroup>
+</Project>
