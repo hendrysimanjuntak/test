@@ -1,14 +1,15 @@
 ﻿// IDEANET.Infrastructure.Data.UnitOfWork.cs
-using TBIGDocumentGenerator.Infrastructure.Interfaces;
-using TBIGDocumentGenerator.Infrastructure.Repositories;
 using EFCore.BulkExtensions;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Storage;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using TBIGDocumentGenerator.Infrastructure.Interfaces;
+using TBIGDocumentGenerator.Infrastructure.Repositories;
 
 // using EFCore.BulkExtensions; // Tidak perlu di sini jika hanya memanggil SaveChangesAsync
 
@@ -128,7 +129,12 @@ namespace TBIGDocumentGenerator.Infrastructure.Data
 			_disposed = true;
 		}
 
-		~UnitOfWork()
+        public IDbConnection GetDbConnection()
+        {
+            return _context.Database.GetDbConnection();
+        }
+
+        ~UnitOfWork()
 		{
 			Dispose(false);
 		}

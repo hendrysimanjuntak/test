@@ -80,5 +80,7 @@ namespace TBIGDocumentGenerator.Application.Interfaces.Entities
         ) where TRequest : DataTablesRequest;
 
         Expression<Func<T, bool>>? CombineFiltersHelper(Expression<Func<T, bool>>? first, Expression<Func<T, bool>>? second);
+
+        Task<IEnumerable<dynamic>> ExecuteDynamicQueryAsync(string sql, object param = null);
     }
 }

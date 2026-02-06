@@ -465,5 +465,20 @@ namespace TBIGDocumentGenerator.Application.Services.Entities
             var body = Expression.AndAlso(firstBody, secondBody);
             return Expression.Lambda<Func<T, bool>>(body, parameter);
         }
+
+
+        public virtual async Task<IEnumerable<dynamic>> ExecuteDynamicQueryAsync(string sql, object param = null)
+        {
+            using (var unitOfWork = _unitOfWorkFactory.Create(_connectionStringName)) { 
+                var connection = unitOfWork.GetDbConnection();
+
+                if (connection.State != System.Data.ConnectionState.Open)
+                {
+                    connection.Open();
+                }
+
+                return await connection.QueryAsync(sql, param);
+            }
+        }
     }
 }
