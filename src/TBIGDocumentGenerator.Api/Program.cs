@@ -1,7 +1,9 @@
+using Scalar.AspNetCore;
 using System.Reflection;
 using TBIGDocumentGenerator.Application.DependencyInjection;
 using TBIGDocumentGenerator.Application.Interfaces.Entities;
 using TBIGDocumentGenerator.Application.Services.Entities;
+using TBIGDocumentGenerator.Application.Services.Entities.TBGAPPHFIRE141.TBIGDocumentGenerator;
 using TBIGDocumentGenerator.Infrastructure.DependencyInjection;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -25,6 +27,10 @@ var app = builder.Build();
 if (app.Environment.IsDevelopment())
 {
     app.MapOpenApi();
+    app.MapScalarApiReference(options =>
+    {
+        options.WithTitle("TBIG Document Generator API");
+    });
 }
 
 app.UseHttpsRedirection();

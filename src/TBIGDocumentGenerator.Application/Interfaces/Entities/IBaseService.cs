@@ -11,7 +11,7 @@ using TBIGDocumentGenerator.Domain.Models;
 using TBIGDocumentGenerator.Domain.Models.Datatables;
 using TBIGDocumentGenerator.Infrastructure.Data;
 
-namespace TBIGDocumentGenerator.Application.Interfaces.Entities
+namespace TBIGDocumentGenerator.Application.Services.Entities.TBGAPPHFIRE141.TBIGDocumentGenerator
 {
     public interface IBaseService<T> where T : class
     {

@@ -8,7 +8,7 @@ using TBIGDocumentGenerator.Application.Services.Entities;
 using TBIGDocumentGenerator.Domain.Entities.TBGAPPHFIRE141.TBIGDocumentGenerator;
 using TBIGDocumentGenerator.Infrastructure.Data;
 
-namespace TBIGDocumentGenerator.Application.Interfaces.Entities
+namespace TBIGDocumentGenerator.Application.Services.Entities.TBGAPPHFIRE141.TBIGDocumentGenerator
 {
     public class ExcelReportService(IUnitOfWorkFactory unitOfWorkFactory, IServiceProvider serviceProvider) : BaseService<ExcelReport>(unitOfWorkFactory, serviceProvider), IExcelReportService
     {

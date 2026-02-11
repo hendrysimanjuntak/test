@@ -25,15 +25,6 @@ namespace TBIGDocumentGenerator.Application.Services.Modules
             _configuration = configuration;
         }
 
-        //public async Task<byte[]> GeneratePdfAsync(GeneratePdfRequest request)
-        //{
-        //    // 1. Get Config from DB via Entity Service
-        //    var template = (await _templateService.GetListAsync(filter: w => w.Code == request.TemplateCode).ConfigureAwait(false)).FirstOrDefault();
-
-        //    // 2. Logic Generate (akan kita detailkan nanti)
-        //    return null;
-        //}
-
         public async Task<byte[]> GeneratePdfAsync(GeneratePdfRequest request)
         {
             var browserWsEndpoint = _configuration["Puppeteer:BrowserUri"]
