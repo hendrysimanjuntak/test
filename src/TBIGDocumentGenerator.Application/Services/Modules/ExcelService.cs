@@ -17,6 +17,7 @@ using TBIGDocumentGenerator.Application.Interfaces.Modules;
 using TBIGDocumentGenerator.Application.Request.Excel;
 using TBIGDocumentGenerator.Application.Request.PDF;
 using TBIGDocumentGenerator.Domain.Entities.TBGAPPHFIRE141.TBIGDocumentGenerator;
+using TBIGDocumentGenerator.Infrastructure;
 
 namespace TBIGDocumentGenerator.Application.Services.Modules
 {
@@ -47,9 +48,14 @@ namespace TBIGDocumentGenerator.Application.Services.Modules
             foreach (var sheet in sheets)
             {
                 string connString = _configuration.GetConnectionString(sheet.ConnectionStringName);
-                if (string.IsNullOrEmpty(connString))
+
+                if (string.IsNullOrWhiteSpace(connString))
                 {
-                    throw new Exception($"Connection string '{sheet.ConnectionStringName}' not configured in appsettings.");
+                    throw new Exception($"FATAL: Connection string for '{sheet.ConnectionStringName}'not found in appsettings.json.");
+                }
+                else
+                {
+                    connString = CryptoHelper.Decrypt(connString);
                 }
 
                 var (sql, parameters) = BuildSqlQuery(sheet, request);

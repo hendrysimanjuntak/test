@@ -9,12 +9,12 @@ namespace TBIGDocumentGenerator.Application.Request.PDF
 {
     public class PdfConfigOverride
     {
-        public string? PaperFormat { get; set; } = "A4";
-        public bool? Landscape { get; set; } = false;
-        public string MarginTop { get; set; } = "20mm";
-        public string MarginBottom { get; set; } = "20mm";
-        public string MarginLeft { get; set; } = "15mm";
-        public string MarginRight { get; set; } = "15mm";
+        public string? PaperFormat { get; set; }
+        public bool? Landscape { get; set; }
+        public string? MarginTop { get; set; }
+        public string? MarginBottom { get; set; }
+        public string? MarginLeft { get; set; }
+        public string? MarginRight { get; set; }
         public string? HeaderHtml { get; set; }
         public string? FooterHtml { get; set; }
     }

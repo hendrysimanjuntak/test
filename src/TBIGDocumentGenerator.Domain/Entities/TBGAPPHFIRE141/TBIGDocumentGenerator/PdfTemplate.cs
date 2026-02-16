@@ -27,18 +27,18 @@ namespace TBIGDocumentGenerator.Domain.Entities.TBGAPPHFIRE141.TBIGDocumentGener
         public string HtmlContent { get; set; }
 
         [MaxLength(20)]
-        public string PaperFormat { get; set; } = "A4";
+        public string? PaperFormat { get; set; }
 
-        public bool Landscape { get; set; } = false;
+        public bool? Landscape { get; set; }
 
         [MaxLength(10)]
-        public string MarginTop { get; set; } = "20mm";
+        public string? MarginTop { get; set; }
         [MaxLength(10)]
-        public string MarginBottom { get; set; } = "20mm";
+        public string? MarginBottom { get; set; }
         [MaxLength(10)]
-        public string MarginLeft { get; set; } = "15mm";
+        public string? MarginLeft { get; set; }
         [MaxLength(10)]
-        public string MarginRight { get; set; } = "15mm";
+        public string? MarginRight { get; set; }
 
         public string? HeaderHtml { get; set; }
         public string? FooterHtml { get; set; }
