@@ -11,7 +11,7 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 builder.Services.AddInfrastructure();
 
-var appAssembly = Assembly.Load("TBIGDocumentGenerator.Application");
+var appAssembly = Assembly.Load("c");
 builder.Services.AddServicesByConvention(appAssembly, "TBIGDocumentGenerator.Application.Services");
 builder.Services.AddScoped(typeof(IBaseService<>), typeof(BaseService<>));
 

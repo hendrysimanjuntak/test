@@ -72,7 +72,8 @@ namespace TBIGDocumentGenerator.Application.Services.Modules
             {
                 model = request.Data,
                 server_date = DateTime.Now.ToString("dd MMM yyyy HH:mm"),
-                server_user = "System" 
+                server_user = "System",
+                watermark = request.Config?.Watermark ?? template.Watermark
             };
 
             string? headerContent = null;

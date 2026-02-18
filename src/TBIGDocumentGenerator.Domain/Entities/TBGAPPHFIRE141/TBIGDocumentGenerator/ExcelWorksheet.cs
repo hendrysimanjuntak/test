@@ -21,7 +21,7 @@ namespace TBIGDocumentGenerator.Domain.Entities.TBGAPPHFIRE141.TBIGDocumentGener
         public int ExcelReportID { get; set; }
 
         [Required]
-        [MaxLength(50)]
+        [MaxLength(30)]
         public string SheetName { get; set; }
 
         [Required]

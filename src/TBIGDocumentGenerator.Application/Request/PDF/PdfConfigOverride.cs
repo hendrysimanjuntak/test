@@ -17,5 +17,7 @@ namespace TBIGDocumentGenerator.Application.Request.PDF
         public string? MarginRight { get; set; }
         public string? HeaderHtml { get; set; }
         public string? FooterHtml { get; set; }
+        [MaxLength(100)]
+        public string? Watermark { get; set; }
     }
 }

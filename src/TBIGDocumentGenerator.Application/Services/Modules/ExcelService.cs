@@ -82,7 +82,21 @@ namespace TBIGDocumentGenerator.Application.Services.Modules
             {
                 foreach (var p in parameters)
                 {
-                    command.Parameters.AddWithValue(p.Key, p.Value ?? DBNull.Value);
+                    object finalValue = p.Value;
+
+                    if (finalValue is System.Text.Json.JsonElement jsonElement)
+                    {
+                        finalValue = jsonElement.ValueKind switch
+                        {
+                            System.Text.Json.JsonValueKind.String => jsonElement.GetString(),
+                            System.Text.Json.JsonValueKind.Number => jsonElement.TryGetInt32(out int i) ? (object)i : jsonElement.GetDouble(),
+                            System.Text.Json.JsonValueKind.True => true,
+                            System.Text.Json.JsonValueKind.False => false,
+                            System.Text.Json.JsonValueKind.Null => DBNull.Value,
+                            _ => jsonElement.ToString()
+                        };
+                    }
+                    command.Parameters.AddWithValue(p.Key, finalValue ?? DBNull.Value);
                 }
             }
 

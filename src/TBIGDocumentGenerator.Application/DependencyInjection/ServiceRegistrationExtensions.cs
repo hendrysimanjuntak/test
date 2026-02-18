@@ -23,12 +23,38 @@ namespace TBIGDocumentGenerator.Application.DependencyInjection
         /// <returns>IServiceCollection</returns>
         public static IServiceCollection AddServicesByConvention(this IServiceCollection services, Assembly assembly, string namespacePrefix)
         {
+            var excludedNamespaces = new[]
+            {
+                $"{namespacePrefix}.Handlers",
+                $"{namespacePrefix}.Modules.MessageBroker"
+            };
+
             services.Scan(scan => scan
                 .FromAssemblies(assembly)
-                .AddClasses(classes => classes.Where(type => type.Namespace != null &&
-                                                              type.Namespace.StartsWith(namespacePrefix)))
+                .AddClasses(classes => classes.Where(type =>
+                    type.Namespace != null &&
+                    type.Namespace.StartsWith(namespacePrefix) &&
+                    !excludedNamespaces.Any(ex => type.Namespace.StartsWith(ex))))
                 .AsImplementedInterfaces()
                 .WithScopedLifetime());
+
+            return services;
+        }
+
+        public static IServiceCollection AddServicesWorkerByConvention(this IServiceCollection services, Assembly assembly, string namespacePrefix)
+        {
+            services.AddServicesByConvention(assembly, namespacePrefix);
+
+            var handlersNamespace = $"{namespacePrefix}.Handlers";
+
+            services.Scan(scan => scan
+                .FromAssemblies(assembly)
+                .AddClasses(classes => classes.Where(type =>
+                    type.Namespace != null &&
+                    type.Namespace.StartsWith(handlersNamespace) &&
+                    !type.IsAbstract))
+                .AsSelf()
+                .WithSingletonLifetime());
 
             return services;
         }

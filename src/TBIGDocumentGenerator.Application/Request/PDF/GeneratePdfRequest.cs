@@ -16,5 +16,9 @@ namespace TBIGDocumentGenerator.Application.Request.PDF
 
         public PdfConfigOverride? Config { get; set; }
         public NotificationConfig? Notification { get; set; }
+
+        public string? OutputDirectory { get; set; }
+
+        public string? FileName { get; set; }
     }
 }

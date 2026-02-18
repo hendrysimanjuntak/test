@@ -43,6 +43,9 @@ namespace TBIGDocumentGenerator.Domain.Entities.TBGAPPHFIRE141.TBIGDocumentGener
         public string? HeaderHtml { get; set; }
         public string? FooterHtml { get; set; }
 
+        [MaxLength(100)]
+        public string? Watermark { get; set; }
+
         [MaxLength(50)]
         public string CreatedBy { get; set; }
         public DateTime CreatedDate { get; set; }
